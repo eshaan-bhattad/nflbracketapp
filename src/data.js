@@ -117,7 +117,7 @@ const data = [
     afcChampions: "Buffalo Bills",
     nfcChampions: "Philadelphia Eagles",
     superbowl: "Buffalo Bills",
-    tiebreaker: "N/A",
+    tiebreaker: "48",
   },
   {
     id: 10007,
@@ -777,7 +777,7 @@ const data = [
     afcChampions: "Cincinnati Bengals",
     nfcChampions: "San Francisco 49ers",
     superbowl: "Cincinnati Bengals",
-    tiebreaker: "N/A",
+    tiebreaker: "44",
   },
   {
     id: 10040,
@@ -937,7 +937,7 @@ const data = [
     afcChampions: "Cincinnati Bengals",
     nfcChampions: "San Francisco 49ers",
     superbowl: "San Francisco 49ers",
-    tiebreaker: "N/A",
+    tiebreaker: "59",
   },
   {
     id: 10048,
