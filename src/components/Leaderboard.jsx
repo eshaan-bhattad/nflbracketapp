@@ -21,7 +21,7 @@ function Leaderboard(props) {
       </Helmet>
       <div className="container">
         <div className="px-4 py-4 my-5=4 text-center">
-          <Container style={{ width: "50%", justifyContent: "center" }}>
+          <Container style={{ width: "80%", justifyContent: "center" }}>
             <ListGroup variant="flush">
               <ListGroup.Item as="li">
                 <h3>Leaderboard</h3>

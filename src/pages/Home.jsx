@@ -29,7 +29,7 @@ function Home() {
             <Row>
               <Col>
                 <h3>Top 10 Brackets</h3>
-                <Container style={{ width: "65%" }}>
+                <Container style={{ width: "100%" }}>
                   <ListGroup variant="flush">
                     <ListGroup.Item as="li"></ListGroup.Item>
                     {data.slice(0, 10).map((item, i) => (
