@@ -9,7 +9,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Carousel from "react-bootstrap/Carousel";
 import data from "../data";
 import { getPoints, getSuperbowlFavorites } from "../perfectbracket";
-import BarChart from "react-easy-bar-chart";
 import Leaderboard from "../components/Leaderboard";
 
 function Home() {
