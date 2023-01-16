@@ -1,13 +1,13 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-import './navbar.css';
-import logo from './logo.svg';
+import "./navbar.css";
+import logo from "./logo.svg";
 
 function MainNavbar() {
   const items = [
-    { path: '/', title: 'Overview' },
-    { path: '/login', title: 'Login' },
-    { path: '/leaderboard', title: 'Leaderboard' },
+    { path: "/", title: "Overview" },
+    { path: "/leaderboard", title: "Leaderboard" },
+    { path: "/login", title: "Login" },
   ];
 
   return (

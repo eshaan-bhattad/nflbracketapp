@@ -1,73 +1,137 @@
 /* eslint-disable no-console */
-import { Helmet } from 'react-helmet';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { Helmet } from "react-helmet";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import ListGroup from "react-bootstrap/ListGroup";
 
-import { useParams } from 'react-router-dom';
-import { Bracket } from 'react-brackets';
-import Accordion from 'react-bootstrap/Accordion';
+import { useParams } from "react-router-dom";
+import { Bracket } from "react-brackets";
+import Accordion from "react-bootstrap/Accordion";
 
-import getBracketFromID from '../common/utils';
-import getPoints from '../perfectbracket';
+import getBracketFromID from "../common/utils";
+import {
+  getPoints,
+  getRemainingPossiblePoints,
+  getSeedingForBracket,
+} from "../perfectbracket";
 
 function BracketPage() {
-  const title = 'Bracket';
+  const title = "Bracket";
   // eslint-disable-next-line no-console
   const { id } = useParams();
   const bracket = getBracketFromID(id);
-  console.log(getPoints(bracket));
-  const rounds = [
+  const nfcWildCards = getSeedingForBracket(bracket, "nfc");
+  const afcWildCards = getSeedingForBracket(bracket, "afc");
+  const afcBracket = [
     {
-      title: 'Wild Card Weekend',
+      title: "Wild Card Weekend",
       seeds: [
         {
-          id: 'wildCard1',
+          id: "wildCard1",
           date: new Date().toDateString(),
-          teams: [{ name: '4th Seed' }, { name: '5th Seed' }],
+          teams: [
+            { name: "Los Angeles Chargers" },
+            { name: "Jacksonville Jaguars" },
+          ],
         },
         {
-          id: 'wildCard2',
+          id: "wildCard2",
           date: new Date().toDateString(),
-          teams: [{ name: '3rd Seed' }, { name: '6th Seed' }],
+          teams: [{ name: "Baltimore Ravens" }, { name: "Cincinnati Bengals" }],
         },
         {
-          id: 'wildCard3',
+          id: "wildCard3",
           date: new Date().toDateString(),
-          teams: [{ name: '2nd Seed' }, { name: '5th Seed' }],
-        },
-        {
-          id: 'byeTeam',
-          date: new Date().toDateString(),
-          teams: [{ name: '1st Seed' }],
+          teams: [{ name: "Miami Dolphins" }, { name: "Buffalo Bills" }],
         },
       ],
     },
     {
-      title: 'Divisional Round',
+      title: "Divisional Round",
       seeds: [
         {
           id: 7,
           date: new Date().toDateString(),
-          teams: [{ name: '1st Seed' }, { name: 'TBD' }],
+          teams: [{ name: "Kansas City Chiefs" }, { name: afcWildCards[0] }],
         },
         {
           id: 8,
           date: new Date().toDateString(),
-          teams: [{ name: 'TBD' }, { name: 'TBD' }],
+          teams: [{ name: afcWildCards[1] }, { name: afcWildCards[2] }],
         },
       ],
     },
     {
-      title: 'Conference',
+      title: "Conference",
       seeds: [
         {
           id: 11,
           date: new Date().toDateString(),
-          teams: [{ name: 'TBD' }, { name: 'TBD' }],
+          teams: [
+            { name: bracket.afcDivisional1 },
+            { name: bracket.afcDivisional2 },
+          ],
+        },
+      ],
+    },
+  ];
+  const nfcBracket = [
+    {
+      title: "Wild Card Weekend",
+      seeds: [
+        {
+          id: "wildCard1",
+          date: new Date().toDateString(),
+          teams: [{ name: "Dallas Cowboys" }, { name: "Tampa Bay Buccaneers" }],
+        },
+        {
+          id: "wildCard2",
+          date: new Date().toDateString(),
+          teams: [{ name: "New York Giants" }, { name: "Minnesota Vikings" }],
+        },
+        {
+          id: "wildCard3",
+          date: new Date().toDateString(),
+          teams: [
+            { name: "Seattle Seahawks" },
+            { name: "San Francisco 49ers" },
+          ],
+        },
+      ],
+    },
+    {
+      title: "Divisional Round",
+      seeds: [
+        {
+          id: 7,
+          date: new Date().toDateString(),
+          teams: [
+            { name: "Philadelphia Eagles" },
+            {
+              name: nfcWildCards[0],
+            },
+          ],
+        },
+        {
+          id: 8,
+          date: new Date().toDateString(),
+          teams: [{ name: nfcWildCards[1] }, { name: nfcWildCards[2] }],
+        },
+      ],
+    },
+    {
+      title: "Conference",
+      seeds: [
+        {
+          id: 11,
+          date: new Date().toDateString(),
+          teams: [
+            { name: bracket.nfcDivisional1 },
+            { name: bracket.nfcDivisional2 },
+          ],
         },
       ],
     },
@@ -75,7 +139,7 @@ function BracketPage() {
   return (
     <>
       <Helmet>
-        <title>{'Bracket'}</title>
+        <title>{"Bracket"}</title>
       </Helmet>
       <div className="container">
         <div className="px-4 py-4 my-5=4 text-center">
@@ -88,41 +152,36 @@ function BracketPage() {
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>AFC Bracket</Accordion.Header>
                     <Accordion.Body>
-                      <Bracket rounds={rounds}></Bracket>
+                      <Bracket rounds={afcBracket}></Bracket>
                     </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1">
                     <Accordion.Header>NFC Bracket</Accordion.Header>
                     <Accordion.Body>
-                      <Bracket rounds={rounds}></Bracket>
+                      <Bracket rounds={nfcBracket}></Bracket>
                     </Accordion.Body>
                   </Accordion.Item>
                 </Accordion>
               </Col>
               <Col>
                 <Card>
-                  <Card.Header>Insert Leaderboard Ranking</Card.Header>
+                  <Card.Header>
+                    {getPoints(bracket) +
+                      " of " +
+                      getRemainingPossiblePoints(bracket) +
+                      " possible points"}
+                  </Card.Header>
 
                   <Card.Title>
                     <Button size="lg" style={cardStyle} variant="primary">
-                      {getPoints(bracket)}
+                      {getPoints(bracket) + " Points"}
                     </Button>
                   </Card.Title>
                   <Card.Body>
-                    <ListGroup as="ol">
-                      <ListGroup.Item as="li" className="d-flex justify-content-between align-items-center">
-                        <div className="ms-2 me-auto">
-                          <div className="fw-bold">{bracket.afcChampions}</div>
-                        </div>
-                        <Button variant="outline-dark">14 </Button>
-                      </ListGroup.Item>
-                      <ListGroup.Item as="li" className="d-flex justify-content-between align-items-center">
-                        <div className="ms-2 me-auto">
-                          <div className="fw-bold">{bracket.nfcChampions}</div>
-                        </div>
-                        <Button variant="success">17</Button>
-                      </ListGroup.Item>
-                    </ListGroup>
+                    <div className="mx-auto">
+                      <h3 className="fw-bold">{"🏆" + bracket.superbowl}</h3>
+                      <h5 className="fw-bold">{bracket.tiebreaker}</h5>
+                    </div>
                   </Card.Body>
                   <Card.Body></Card.Body>
                 </Card>
@@ -135,5 +194,5 @@ function BracketPage() {
   );
 }
 
-const cardStyle = { marginTop: '5%' };
+const cardStyle = { marginTop: "5%" };
 export default BracketPage;
