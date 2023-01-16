@@ -1,8 +1,10 @@
+import data from "./data";
+
 export const perfectBracket = {
   name: "Perfect Bracket",
   afcWildCard1: "Jacksonville Jaguars",
   afcWildCard2: "Buffalo Bills",
-  afcWildCard3: "TBD",
+  afcWildCard3: "Cincinnati Bengals",
   nfcWildCard1: "San Francisco 49ers",
   nfcWildCard2: "New York Giants",
   nfcWildCard3: "TBD",
@@ -57,7 +59,6 @@ const games = [
 export const getRemainingPossiblePoints = (bracket) => {
   const remaining_games = [
     ...[
-      "afcWildCard3",
       "nfcWildCard3",
       "afcDivisional1",
       "afcDivisional2",
@@ -73,7 +74,6 @@ export const getRemainingPossiblePoints = (bracket) => {
     "Buffalo Bills",
     "Kansas City Chiefs",
     "Jacksonville Jaguars",
-    "Baltimore Ravens",
     "Philadelphia Eagles",
     "San Francisco 49ers",
     "Dallas Cowboys",
@@ -166,4 +166,13 @@ export const getSeedingForBracket = (bracket, conference) => {
     console.log(final_teams);
     return final_teams;
   }
+};
+
+export const getSuperbowlFavorites = () => {
+  var res = {};
+  data.forEach(function (v) {
+    res[v.tiebreaker] = (res[v.tiebreaker] || 0) + 1;
+  });
+  console.log(res);
+  return res;
 };

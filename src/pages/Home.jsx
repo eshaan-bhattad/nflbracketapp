@@ -8,7 +8,8 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import Carousel from "react-bootstrap/Carousel";
 import data from "../data";
-import { getPoints } from "../perfectbracket";
+import { getPoints, getSuperbowlFavorites } from "../perfectbracket";
+import BarChart from "react-easy-bar-chart";
 import Leaderboard from "../components/Leaderboard";
 
 function Home() {
@@ -54,59 +55,36 @@ function Home() {
                 </Container>{" "}
               </Col>
               <Col>
-                <h3>Statistics</h3>
-                <Carousel variant="dark" style={{ marginTop: "3%" }}>
-                  <Carousel.Item>
-                    <Card></Card>
-                    <img
-                      className="d-block w-100"
-                      src="holder.js/800x400?text=Second slide&bg=eee"
-                      alt="First slide"
-                    />
-                    <Carousel.Caption>
-                      <h5>Superbowl Pick</h5>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="holder.js/800x400?text=Second slide&bg=eee"
-                      alt="Second slide"
-                    />
-                    <Carousel.Caption>
-                      <h5>NFC Champion Picks</h5>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="holder.js/800x400?text=Third slide&bg=e5e5e5"
-                      alt="Third slide"
-                    />
-                    <Carousel.Caption>
-                      <h5>AFC Champion Picks</h5>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                </Carousel>
-                {/*
-                <Accordion defaultActiveKey="3">
-                  <Accordion.Item eventKey="3">
-                    <Accordion.Header>Superbowl Picks</Accordion.Header>
-                    <Accordion.Body></Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="2">
-                    <Accordion.Header>Conference Picks</Accordion.Header>
-                    <Accordion.Body></Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="1">
-                    <Accordion.Header>Divisional Picks</Accordion.Header>
-                    <Accordion.Body></Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>Wildcard Picks</Accordion.Header>
-                    <Accordion.Body></Accordion.Body>
-                  </Accordion.Item>
-                </Accordion> */}
+                <h3 style={{ marginBottom: "4%" }}>Insights</h3>
+
+                <Row xs={1} md={1} className="g-4">
+                  <Col>
+                    <Card style={{ marginBottom: "5%" }}>
+                      <Card.Body>
+                        <Card.Title>Buffalo Bills</Card.Title>
+                        <Card.Text>AFC Champion Favorites</Card.Text>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ marginBottom: "5%" }}>
+                      <Card.Body>
+                        <Card.Title>San Francisco 49ers</Card.Title>
+                        <Card.Text>NFC Champion Favorites</Card.Text>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ marginBottom: "5%" }}>
+                      <Card.Body>
+                        <Card.Title>Buffalo Bills</Card.Title>
+                        <Card.Text>Superbowl Favorites</Card.Text>
+                      </Card.Body>
+                    </Card>
+                    <Card style={{ marginBottom: "5%" }}>
+                      <Card.Body>
+                        <Card.Title>58</Card.Title>
+                        <Card.Text>Most Common Tiebreaker Score</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </Container>
