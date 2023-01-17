@@ -31,7 +31,7 @@ function BracketPage() {
       seeds: [
         {
           id: "wildCard1",
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 14).toDateString(),
           teams: [
             { name: "Los Angeles Chargers" },
             { name: "Jacksonville Jaguars" },
@@ -39,12 +39,12 @@ function BracketPage() {
         },
         {
           id: "wildCard2",
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 15).toDateString(),
           teams: [{ name: "Baltimore Ravens" }, { name: "Cincinnati Bengals" }],
         },
         {
           id: "wildCard3",
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 15).toDateString(),
           teams: [{ name: "Miami Dolphins" }, { name: "Buffalo Bills" }],
         },
       ],
@@ -54,12 +54,12 @@ function BracketPage() {
       seeds: [
         {
           id: 7,
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 21).toDateString(),
           teams: [{ name: "Kansas City Chiefs" }, { name: afcWildCards[0] }],
         },
         {
           id: 8,
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 22).toDateString(),
           teams: [{ name: afcWildCards[1] }, { name: afcWildCards[2] }],
         },
       ],
@@ -69,7 +69,7 @@ function BracketPage() {
       seeds: [
         {
           id: 11,
-          date: new Date().toDateString(),
+          date: "TBD",
           teams: [
             { name: bracket.afcDivisional1 },
             { name: bracket.afcDivisional2 },
@@ -84,17 +84,17 @@ function BracketPage() {
       seeds: [
         {
           id: "wildCard1",
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 16).toDateString(),
           teams: [{ name: "Dallas Cowboys" }, { name: "Tampa Bay Buccaneers" }],
         },
         {
           id: "wildCard2",
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 15).toDateString(),
           teams: [{ name: "New York Giants" }, { name: "Minnesota Vikings" }],
         },
         {
           id: "wildCard3",
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 14).toDateString(),
           teams: [
             { name: "Seattle Seahawks" },
             { name: "San Francisco 49ers" },
@@ -107,7 +107,7 @@ function BracketPage() {
       seeds: [
         {
           id: 7,
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 21).toDateString(),
           teams: [
             { name: "Philadelphia Eagles" },
             {
@@ -117,7 +117,7 @@ function BracketPage() {
         },
         {
           id: 8,
-          date: new Date().toDateString(),
+          date: new Date(2023, 0, 22).toDateString(),
           teams: [{ name: nfcWildCards[1] }, { name: nfcWildCards[2] }],
         },
       ],
@@ -127,7 +127,7 @@ function BracketPage() {
       seeds: [
         {
           id: 11,
-          date: new Date().toDateString(),
+          date: "TBD",
           teams: [
             { name: bracket.nfcDivisional1 },
             { name: bracket.nfcDivisional2 },

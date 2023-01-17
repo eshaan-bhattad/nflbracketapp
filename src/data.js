@@ -496,7 +496,7 @@ const data = [
     nfcDivisional2: "San Francisco 49ers",
     afcChampions: "Buffalo Bills",
     nfcChampions: "San Francisco 49ers",
-    superbowl: "",
+    superbowl: "Buffalo Bills",
     tiebreaker: 41,
   },
   {
