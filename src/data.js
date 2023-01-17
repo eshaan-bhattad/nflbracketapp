@@ -979,6 +979,26 @@ const data = [
     superbowl: "Cincinnati Bengals",
     tiebreaker: 48,
   },
+  {
+    id: 10050,
+    firstname: "Andrew",
+    lastname: "Lee",
+    name: "Andrew Lee",
+    afcWildCard1: "Jacksonville Jaguars",
+    afcWildCard2: "Buffalo Bills",
+    afcWildCard3: "Cincinnati Bengals",
+    nfcWildCard1: "San Francisco 49ers",
+    nfcWildCard2: "Minnesota Vikings",
+    nfcWildCard3: "Tampa Bay Buccaneers",
+    afcDivisional1: "Kansas City Chiefs",
+    afcDivisional2: "Cincinnati Bengals",
+    nfcDivisional1: "Philadelphia Eagles",
+    nfcDivisional2: "San Francisco 49ers",
+    afcChampions: "Kansas City Chiefs",
+    nfcChampions: "Philadelphia Eagles",
+    superbowl: "Cincinnati Bengals",
+    tiebreaker: 62,
+  },
 ];
 
 export default data;
