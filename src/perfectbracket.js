@@ -7,7 +7,7 @@ export const perfectBracket = {
   afcWildCard3: "Cincinnati Bengals",
   nfcWildCard1: "San Francisco 49ers",
   nfcWildCard2: "New York Giants",
-  nfcWildCard3: "TBD",
+  nfcWildCard3: "Dallas Cowboys",
   afcDivisional1: "TBD",
   afcDivisional2: "TBD",
   nfcDivisional1: "TBD",
@@ -59,7 +59,6 @@ const games = [
 export const getRemainingPossiblePoints = (bracket) => {
   const remaining_games = [
     ...[
-      "nfcWildCard3",
       "afcDivisional1",
       "afcDivisional2",
       "nfcDivisional1",
@@ -78,7 +77,6 @@ export const getRemainingPossiblePoints = (bracket) => {
     "San Francisco 49ers",
     "Dallas Cowboys",
     "New York Giants",
-    "Tampa Bay Buccaneers",
   ];
   let possiblePoints = 0;
   remaining_games.forEach((game) => {
@@ -175,4 +173,14 @@ export const getSuperbowlFavorites = () => {
   });
   console.log(res);
   return res;
+};
+
+export const getNumberOfPerfectBrackets = () => {
+  var count = 0;
+  data.forEach((bracket) => {
+    if (getRemainingPossiblePoints(bracket) === 48) {
+      count += 1;
+    }
+  });
+  return count;
 };

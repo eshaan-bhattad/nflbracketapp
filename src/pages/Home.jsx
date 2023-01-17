@@ -8,7 +8,11 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import Carousel from "react-bootstrap/Carousel";
 import data from "../data";
-import { getPoints, getSuperbowlFavorites } from "../perfectbracket";
+import {
+  getNumberOfPerfectBrackets,
+  getPoints,
+  getSuperbowlFavorites,
+} from "../perfectbracket";
 import Leaderboard from "../components/Leaderboard";
 
 function Home() {
@@ -78,8 +82,8 @@ function Home() {
                     </Card>
                     <Card style={{ marginBottom: "5%" }}>
                       <Card.Body>
-                        <Card.Title>58</Card.Title>
-                        <Card.Text>Most Common Tiebreaker Score</Card.Text>
+                        <Card.Title>{getNumberOfPerfectBrackets()}</Card.Title>
+                        <Card.Text># of Perfect Brackets</Card.Text>
                       </Card.Body>
                     </Card>
                   </Col>
