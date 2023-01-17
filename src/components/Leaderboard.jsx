@@ -11,7 +11,6 @@ import getBracketFromID from "../common/utils";
 
 function Leaderboard(props) {
   // eslint-disable-next-line no-console
-  console.log(props);
   data.sort((a, b) => (getPoints(a) >= getPoints(b) ? -1 : 1));
 
   return (

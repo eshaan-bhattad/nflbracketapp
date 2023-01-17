@@ -80,9 +80,6 @@ export const getRemainingPossiblePoints = (bracket) => {
   ];
   let possiblePoints = 0;
   remaining_games.forEach((game) => {
-    console.log(game);
-    console.log(bracket[game]);
-    console.log(remaining_teams.indexOf(bracket[game]) >= 0);
     if (remaining_teams.indexOf(bracket[game]) >= 0) {
       possiblePoints += getPointValueForGame(game);
     }
@@ -147,7 +144,6 @@ export const getSeedingForBracket = (bracket, conference) => {
       bracket.afcWildCard2,
       bracket.afcWildCard3,
     ];
-    console.log(ordered_matches);
     const seeding = [];
     ordered_matches.forEach((match) => {
       {
@@ -156,23 +152,35 @@ export const getSeedingForBracket = (bracket, conference) => {
     });
     seeding.sort();
     seeding.reverse();
-    console.log(seeding);
     const final_teams = [];
     seeding.forEach((seed) => {
       final_teams.push(getTeamBySeed(afcTeamSeeds, seed));
     });
-    console.log(final_teams);
     return final_teams;
   }
+};
+
+const exportObjectToSortedArray = (object) => {
+  const map = new Map(Object.entries(object));
+  const sortedMap = new Map([...map.entries()].sort((a, b) => b[1] - a[1]));
+
+  // const keys = Object.keys(object);
+  // keys.forEach((key) => {
+  //   var key = map();
+  //   key.put()
+  //   res.push(key:  object[key]){
+  //    );
+  // });
+  // console.log(res);
+  return sortedMap;
 };
 
 export const getSuperbowlFavorites = () => {
   var res = {};
   data.forEach(function (v) {
-    res[v.tiebreaker] = (res[v.tiebreaker] || 0) + 1;
+    res[v.superbowl] = (res[v.superbowl] || 0) + 1;
   });
-  console.log(res);
-  return res;
+  return exportObjectToSortedArray(res);
 };
 
 export const getNumberOfPerfectBrackets = () => {

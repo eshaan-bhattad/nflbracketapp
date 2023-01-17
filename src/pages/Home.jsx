@@ -17,10 +17,8 @@ import Leaderboard from "../components/Leaderboard";
 
 function Home() {
   const title = "NFL Bracket Challenge";
-
   data.sort((a, b) => (getPoints(a) >= getPoints(b) ? -1 : 1));
   const navigate = useNavigate();
-
   return (
     <>
       <Helmet>
