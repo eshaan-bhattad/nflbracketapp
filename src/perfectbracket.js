@@ -9,7 +9,7 @@ export const perfectBracket = {
   nfcWildCard2: "New York Giants",
   nfcWildCard3: "Dallas Cowboys",
   afcDivisional1: "Kansas City Chiefs",
-  afcDivisional2: "TBD",
+  afcDivisional2: "Cincinnati Bengals",
   nfcDivisional1: "Philadelphia Eagles",
   nfcDivisional2: "TBD",
   afcChampions: "TBD",
@@ -59,7 +59,6 @@ const games = [
 export const getRemainingPossiblePoints = (bracket) => {
   const remaining_games = [
     ...[
-      "afcDivisional2",
       "nfcDivisional2",
       "afcChampions",
       "nfcChampions",
@@ -68,7 +67,6 @@ export const getRemainingPossiblePoints = (bracket) => {
   ];
   const remaining_teams = [
     "Cincinnati Bengals",
-    "Buffalo Bills",
     "Kansas City Chiefs",
     "Philadelphia Eagles",
     "San Francisco 49ers",
