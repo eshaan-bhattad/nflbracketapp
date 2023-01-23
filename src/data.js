@@ -1019,6 +1019,26 @@ const data = [
     superbowl: "Philadelphia Eagles",
     tiebreaker: 55,
   },
+  {
+    id: 10052,
+    firstname: "Shanky",
+    lastname: "",
+    name: "Shanky",
+    afcWildCard1: "Jacksonville Jaguars",
+    afcWildCard2: "Buffalo Bills",
+    afcWildCard3: "Cincinnati Bengals",
+    nfcWildCard1: "San Francisco 49ers",
+    nfcWildCard2: "Minnesota Vikings",
+    nfcWildCard3: "Tampa Bay Buccaneers",
+    afcDivisional1: "Kansas City Chiefs",
+    afcDivisional2: "Buffalo Bills",
+    nfcDivisional1: "Philadelphia Eagles",
+    nfcDivisional2: "San Francisco 49ers",
+    afcChampions: "Kansas City Chiefs",
+    nfcChampions: "San Francisco 49ers",
+    superbowl: "San Francisco 49ers",
+    tiebreaker: 49,
+  },
 ];
 
 export default data;
