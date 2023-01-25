@@ -179,8 +179,17 @@ function BracketPage() {
                   </Card.Title>
                   <Card.Body>
                     <div className="mx-auto">
-                      <h3 className="fw-bold">{"🏆" + bracket.superbowl}</h3>
-                      <h5 className="fw-bold">{bracket.tiebreaker}</h5>
+                      <h5>
+                        {bracket.afcChampions === bracket.superbowl
+                          ? "🏆" + bracket.afcChampions
+                          : "🏆" + bracket.nfcChampions}
+                      </h5>
+                      <h5>
+                        {bracket.afcChampions === bracket.superbowl
+                          ? bracket.nfcChampions
+                          : bracket.afcChampions}
+                      </h5>
+                      <h6 className="fw-bold">{bracket.tiebreaker}</h6>
                     </div>
                   </Card.Body>
                   <Card.Body></Card.Body>
