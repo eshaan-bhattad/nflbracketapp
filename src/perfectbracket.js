@@ -14,8 +14,8 @@ export const perfectBracket = {
   nfcDivisional2: "San Francisco 49ers",
   afcChampions: "Kansas City Chiefs",
   nfcChampions: "Philadelphia Eagles",
-  superbowl: "TBD",
-  superbowlTiebreaker: 0,
+  superbowl: "Kansas City Chiefs",
+  superbowlTiebreaker: 73,
   points: 0,
   id: 9999,
 };
@@ -57,11 +57,8 @@ const games = [
 ];
 
 export const getRemainingPossiblePoints = (bracket) => {
-  const remaining_games = [...["superbowl"]];
-  const remaining_teams = [
-    "Kansas City Chiefs",
-    "Philadelphia Eagles",
-  ];
+  const remaining_games = [...[]];
+  const remaining_teams = [];
   let possiblePoints = 0;
   remaining_games.forEach((game) => {
     if (remaining_teams.indexOf(bracket[game]) >= 0) {
